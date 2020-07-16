@@ -9,8 +9,8 @@ export const businessList = () => {
     
     contentElement.innerHTML += "<h2>Active Businesses</h2>"
 
-    businesses.forEach(businessObj => 
+    businesses.forEach(businessObj => {
             contentElement.innerHTML += businessHTML(businessObj)
-    )
+    })
     
 }
