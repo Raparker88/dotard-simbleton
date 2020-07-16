@@ -2,10 +2,8 @@ import { businessList } from "./BusinessList.js"
 
 businessList()
 
-import { newYorkList } from "./NewYorkBusinessList.js"
+import { agentList } from "./AgentList.js"
+agentList()
 
-newYorkList()
-
-import { manufacturerList } from "./ManufacturerList.js"
-
-manufacturerList()
+import { agentCollection } from "./BusinessProvider.js"
+console.log(agentCollection())

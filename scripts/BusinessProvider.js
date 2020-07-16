@@ -111,6 +111,41 @@ const businesses = [
     }
   ];
 
-  export const businessCollection = () => {
+export const businessCollection = () => {
       return businesses.slice();
   }
+
+const agents = businesses.map(businessObject => {
+    let newObject = {}
+    newObject.fullName = businessObject.purchasingAgent.nameFirst + " " + businessObject.purchasingAgent.nameLast
+    newObject.company = businessObject.companyName
+    newObject.phoneNumber = businessObject.phoneWork
+
+    return newObject
+  })
+
+
+export const agentCollection = () => {
+  return agents.slice()
+}
+
+let NYBusinesses =[]
+export const newYorkBusinesses = () => {
+  businesses.filter(businessObj => {
+  if (businessObj.addressStateCode === "NY"){
+      NYBusinesses.push(businessObj)
+    }
+  })
+  return NYBusinesses.slice()
+}
+
+let manufacturingBusinesses = []
+export const manufacturers = () => {
+  businesses.filter(businessObj => {
+  if (businessObj.companyIndustry === "Manufacturing"){
+    manufacturingBusinesses.push(businessObj)
+    }
+  })
+  return manufacturingBusinesses.slice()
+}
+

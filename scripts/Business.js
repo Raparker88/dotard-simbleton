@@ -7,3 +7,4 @@ export const businessHTML = (businessObj) => {
         </div>
         `
 }
+
