@@ -2,7 +2,7 @@ import { businessCollection } from "./BusinessProvider.js"
 
 import { businessHTML } from "./Business.js"
 
-const contentElement = document.querySelector(".active_businesses")
+const contentElement = document.querySelector(".businessList")
 
 export const businessList = () => {
     const businesses = businessCollection()
