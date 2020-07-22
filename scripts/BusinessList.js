@@ -48,21 +48,26 @@ document
                     business.companyName.includes(keyPressEvent.target.value)
             */
             const businesses = businessCollection()
-            const foundBusiness = businesses.find(business => business.companyName.includes(keyPressEvent.target.value))// implement .find() method here
+            const foundBusiness = businesses.filter(business => business.companyName.includes(keyPressEvent.target.value))// implement .find() method here
 
-            companySearchResultArticle.innerHTML = `
-                <h2>
-                ${foundBusiness.companyName}
-                </h2>
-                <section>
-                ${foundBusiness.addressFullStreet}
+            companySearchResultArticle.innerHTML = ""
+            foundBusiness.forEach(business =>{
+                companySearchResultArticle.innerHTML += `
+                    <h2>
+                    ${business.companyName}
+                    </h2>
+                    <section>
+                    ${business.addressFullStreet}
+    
+                    </section>
+                    <section>
+                    ${business.addressCity},
+                    ${business.addressStateCode}
+                    ${business.addressZipCode}
+                    </section>
+                `;
 
-                </section>
-                <section>
-                ${foundBusiness.addressCity},
-                ${foundBusiness.addressStateCode}
-                ${foundBusiness.addressZipCode}
-                </section>
-            `;
+
+            })
         }
     });
